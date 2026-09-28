@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>أكاديمية نور القرآن العالمية | تحت إشراف الأستاذ أحمد أسامة</title>
+
+<!-- Fonts: Cairo & Amiri & Reem Kufi -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;500;600;700;800;900;1000&family=Reem+Kufi:wght@500;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<!-- Custom Tailwind Theme Configuration -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          quran: {
+            bg: '#040a09',
+            surface: '#081512',
+            card: 'rgba(10, 28, 23, 0.82)',
+            cardHover: 'rgba(15, 42, 34, 0.95)',
+            gold: '#f0cb75',
+            goldLight: '#fef1cf',
+            goldDark: '#b88e36',
+            emerald: '#10b981',
+            emeraldDark: '#047857',
+            accent: '#00e699'
+          }
+        },
+        fontFamily: {
+          cairo: ['Cairo', 'sans-serif'],
+          amiri: ['Amiri', 'serif'],
+          kufi: ['Reem Kufi', 'sans-serif']
+        },
+        animation: {
+          'pulse-glow': 'pulseGlow 3.5s infinite alternate',
+          'float': 'float 6s ease-in-out infinite',
+          'shimmer': 'shimmer 3s infinite linear',
+          'radial-rotate': 'radialRotate 25s linear infinite'
+        },
+        keyframes: {
+          pulseGlow: {
+            '0%': { boxShadow: '0 0 15px rgba(240, 203, 117, 0.25), inset 0 0 10px rgba(16, 185, 129, 0.1)' },
+            '100%': { boxShadow: '0 0 45px rgba(240, 203, 117, 0.65), 0 0 90px rgba(16, 185, 129, 0.35)' }
+          },
+          float: {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-10px)' }
+          },
+          shimmer: {
+            '0%': { backgroundPosition: '-200% 0' },
+            '100%': { backgroundPosition: '200% 0' }
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Custom Styles for Luxury Neo-Islamic Aesthetics -->
+<style>
+  :root {
+    --bg-dark: #040a09;
+    --gold-main: #f0cb75;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #f8fafc;
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Radial & Mesh Lighting Overlays */
+  .neo-islamic-mesh {
+    background-color: #040a09;
+    background-image: 
+      radial-gradient(circle at 50% -10%, rgba(240, 203, 117, 0.18) 0%, transparent 50%),
+      radial-gradient(circle at 100% 40%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 0% 70%, rgba(240, 203, 117, 0.1) 0%, transparent 45%),
+      radial-gradient(circle at 50% 100%, rgba(4, 120, 87, 0.15) 0%, transparent 60%);
+  }
+
+  .radial-gold-light {
+    background: radial-gradient(circle, rgba(240, 203, 117, 0.22) 0%, rgba(16, 185, 129, 0.08) 50%, transparent 75%);
+  }
+
+  .glass-panel-royal {
+    background: linear-gradient(135deg, rgba(12, 33, 27, 0.85) 0%, rgba(5, 18, 14, 0.92) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(240, 203, 117, 0.28);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-panel-gold-card {
+    background: linear-gradient(145deg, rgba(18, 48, 39, 0.9) 0%, rgba(6, 21, 16, 0.98) 100%);
+    backdrop-filter: blur(24px);
+    border: 1.5px solid rgba(240, 203, 117, 0.5);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(240, 203, 117, 0.18);
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #fef1cf 35%, #f0cb75 70%, #b88e36 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-gradient-bg {
+    background: linear-gradient(135deg, #fef1cf 0%, #f0cb75 50%, #b88e36 100%);
+  }
+
+  .emerald-gradient-bg {
+    background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  }
+
+  .btn-gold-glow {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-gold-glow::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: rotate(30deg) translateY(-100%);
+    transition: transform 0.8s ease;
+  }
+
+  .btn-gold-glow:hover::after {
+    transform: rotate(30deg) translateY(100%);
+  }
+
+  /* Islamic Geometry Frame Border Overlay */
+  .islamic-border-frame {
+    position: relative;
+  }
+  .islamic-border-frame::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 1.5rem;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(240, 203, 117, 0.8), rgba(16, 185, 129, 0.3), rgba(184, 142, 54, 0.8));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Range Input Custom Styling */
+  input[type=range] {
+    -webkit-appearance: none;
+    background: #081d17;
+    height: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(240, 203, 117, 0.35);
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fef1cf, #f0cb75);
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(240, 203, 117, 0.9);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #040a09; }
+  ::-webkit-scrollbar-thumb { background: #0e3b2f; border-radius: 4px; border: 1px solid rgba(240, 203, 117, 0.2); }
+  ::-webkit-scrollbar-thumb:hover { background: #f0cb75; }
+
+  /* Hide Scrollbar helper */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+
+<body class="neo-islamic-mesh min-h-screen text-slate-100 flex flex-col justify-between selection:bg-quran-gold selection:text-quran-bg antialiased">
+
+<!-- Header Navigation Bar -->
+<header class="sticky top-0 z-50 glass-panel-royal border-b border-quran-gold/25 shadow-2xl transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    
+    <!-- Academy Brand & Emblem -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="relative w-12 h-12 rounded-full gold-gradient-bg p-0.5 shadow-lg shadow-quran-gold/20 group-hover:scale-105 transition-transform duration-300">
+        <div class="w-full h-full bg-quran-surface rounded-full flex items-center justify-center border border-quran-gold/50">
+          <span class="font-amiri text-2xl font-bold text-quran-gold leading-none">ن</span>
+        </div>
+      </div>
+      <div>
+        <h1 class="font-bold text-base sm:text-lg text-white tracking-wide leading-tight group-hover:text-quran-gold transition-colors">
+          أكاديمية <span class="gold-gradient-text">نور القرآن</span> العالمية
+        </h1>
+        <p class="text-[11px] sm:text-xs text-quran-goldLight/80 font-semibold flex items-center gap-1">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-quran-emerald inline"></i>
+          إشراف وإدارة أ. أحمد أسامة
+        </p>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-7 font-bold text-xs xl:text-sm text-slate-300">
+      <a href="#about" class="hover:text-quran-gold transition-colors flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4 text-quran-gold"></i> عن الأكاديمية</a>
+      <a href="#tracks" class="hover:text-quran-gold transition-colors flex items-center gap-1.5"><i data-lucide="book-open" class="w-4 h-4 text-quran-gold"></i> المسارات</a>
+      <a href="#audio" class="hover:text-quran-gold transition-colors flex items-center gap-1.5"><i data-lucide="volume-2" class="w-4 h-4 text-quran-gold"></i> التلاوات</a>
+      <a href="#calculator" class="hover:text-quran-gold transition-colors flex items-center gap-1.5"><i data-lucide="calculator" class="w-4 h-4 text-quran-gold"></i> الحاسبة الذكية</a>
+      <a href="#pricing" class="hover:text-quran-gold transition-colors flex items-center gap-1.5"><i data-lucide="credit-card" class="w-4 h-4 text-quran-gold"></i> الباقات</a>
+      <a href="#wallOfLove" class="hover:text-quran-gold transition-colors flex items-center gap-1.5"><i data-lucide="star" class="w-4 h-4 text-quran-gold"></i> آراء الطلاب</a>
+      <a href="#faq" class="hover:text-quran-gold transition-colors flex items-center gap-1.5"><i data-lucide="help-circle" class="w-4 h-4 text-quran-gold"></i> الأسئلة</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/201515712708?text=السلام%20عليكم%20أستاذ%20أحمد%20أسامة،%20أرغب%20في%20الاستفسار%20عن%20أكاديمية%20نور%20القرآن" 
+         target="_blank" 
+         class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-extrabold text-xs hover:bg-emerald-600 hover:text-white transition-all shadow-md">
+        <i data-lucide="message-square" class="w-4 h-4"></i>
+        <span>واتساب مباشر</span>
+      </a>
+
+      <a href="#apply" 
+         class="btn-gold-glow gold-gradient-bg text-quran-bg font-black text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-lg shadow-quran-gold/25 hover:scale-105 active:scale-95 transition-all">
+        سجل الآن 📖
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="flex-grow">
+
+  <!-- Royal Basmala Frame Banner -->
+  <section class="pt-8 pb-4 text-center px-4">
+    <div class="max-w-3xl mx-auto glass-panel-gold-card rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-2xl islamic-border-frame">
+      <!-- Radial Golden Backdrop Glow -->
+      <div class="absolute inset-0 radial-gold-light pointer-events-none opacity-80"></div>
+      
+      <div class="relative z-10 space-y-2">
+        <div class="font-amiri text-4xl sm:text-6xl font-bold gold-gradient-text tracking-widest leading-relaxed">
+          ﷽
+        </div>
+        <p class="font-amiri text-base sm:text-2xl text-emerald-300 font-bold tracking-wide">
+          «خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ»
+        </p>
+        <p class="text-[11px] sm:text-xs text-quran-goldLight/70 font-semibold uppercase tracking-wider">
+          صدق رسول الله ﷺ — حلقة علم ونور مباركة
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section id="about" class="py-10 sm:py-16 px-4 max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+    
+    <!-- Hero Text Content -->
+    <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel-royal border border-quran-gold/40 text-quran-gold text-xs font-bold shadow-lg animate-pulse-glow">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>التسجيل المباشر مفتوح لجميع الدول - العام الدراسي 2026</span>
+      </div>
+
+      <h2 class="font-amiri text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight sm:leading-snug">
+        اتقن كتاب الله حِفظاً وتجويداً<br>
+        <span class="gold-gradient-text">مع نُخبة من كبار الأزهريين المُجازين</span>
+      </h2>
+
+      <p class="text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+        صَرْحٌ قُرْآنِيٌّ عَالَمِيٌّ مُتَكَامِلٌ يُقَدِّمُ حَلَقَاتٍ فَرْدِيَّةً خَاصَّةً <span class="text-quran-gold font-bold">(1 على 1)</span> أُونْلَايْن لِلأَطْفَالِ وَالْكِبَارِ فِي جَمِيعِ أَنَحَاءِ الْعَالَمِ، بِمُتَابَعَةٍ عِلْمِيَّةٍ وَإِدَارِيَّةٍ مُبَاشِرَةٍ مِنْ <strong class="text-white border-b border-quran-gold">الأُسْتَاذِ أَحْمَدَ أُسَامَة</strong>.
+      </p>
+
+      <!-- Hero Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+        <a href="#apply" onclick="setRole('student')" class="btn-gold-glow gold-gradient-bg text-quran-bg font-extrabold px-7 py-4 rounded-xl shadow-xl shadow-quran-gold/20 hover:scale-105 transition-all text-sm sm:text-base flex items-center gap-2">
+          <i data-lucide="book-open-check" class="w-5 h-5"></i>
+          <span>طلب الالتحاق كطالب</span>
+        </a>
+
+        <a href="#apply" onclick="setRole('teacher')" class="glass-panel-royal text-quran-goldLight border-quran-gold/50 font-bold px-6 py-4 rounded-xl hover:bg-quran-gold/10 transition-all text-sm sm:text-base flex items-center gap-2">
+          <i data-lucide="user-check" class="w-5 h-5 text-quran-gold"></i>
+          <span>الانضمام كمعلم</span>
+        </a>
+
+        <a href="https://wa.me/201515712708?text=السلام%20عليكم%20أستاذ%20أحمد%20أسامة،%20أرغب%20في%20التواصل%20المباشر" target="_blank" class="emerald-gradient-bg text-white font-bold px-6 py-4 rounded-xl shadow-lg hover:scale-105 transition-all text-sm sm:text-base flex items-center gap-2">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>تواصل مع المشرف</span>
+        </a>
+      </div>
+
+      <!-- Quick Numbers Badges -->
+      <div class="pt-6 grid grid-cols-3 gap-3 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+        <div class="text-center lg:text-right">
+          <div class="font-amiri text-2xl sm:text-3xl font-bold text-quran-gold">+1,800</div>
+          <p class="text-xs text-slate-400 font-semibold">طالب حول العالم</p>
+        </div>
+        <div class="text-center lg:text-right">
+          <div class="font-amiri text-2xl sm:text-3xl font-bold text-quran-gold">+85</div>
+          <p class="text-xs text-slate-400 font-semibold">معلم ومعلمة مجازون</p>
+        </div>
+        <div class="text-center lg:text-right">
+          <div class="font-amiri text-2xl sm:text-3xl font-bold text-emerald-400">100%</div>
+          <p class="text-xs text-slate-400 font-semibold">إشراف ومتابعة حية</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Right: Giant Founder Card (الأستاذ أحمد أسامة) -->
+    <div class="lg:col-span-5 relative">
+      <div class="absolute -inset-1 gold-gradient-bg rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+      
+      <div class="relative glass-panel-gold-card rounded-3xl p-6 sm:p-8 space-y-6">
+        
+        <!-- Header Badge -->
+        <div class="flex items-center justify-between border-b border-quran-gold/25 pb-4">
+          <span class="text-xs font-black tracking-wider text-quran-gold uppercase flex items-center gap-1.5">
+            <i data-lucide="award" class="w-4 h-4"></i> وسام التأسيس والإشراف العام
+          </span>
+          <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 px-3 py-1 rounded-full text-[11px] font-extrabold flex items-center gap-1">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> الإمارة العلمية
+          </span>
+        </div>
+
+        <!-- Founder Profile Header -->
+        <div class="flex items-center gap-4 sm:gap-5">
+          <div class="relative shrink-0">
+            <div class="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl gold-gradient-bg p-1 shadow-2xl">
+              <div class="w-full h-full bg-quran-surface rounded-xl flex items-center justify-center font-amiri text-4xl font-bold text-quran-gold border border-quran-gold/30">
+                أ
+              </div>
+            </div>
+            <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-slate-950 p-1.5 rounded-full text-xs font-bold shadow-md">
+              <i data-lucide="shield-check" class="w-4 h-4 stroke-[3]"></i>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl sm:text-2xl font-black text-white leading-tight">الأستاذ / أحمد أسامة</h3>
+            <p class="text-quran-gold text-xs sm:text-sm font-bold mt-1">المؤسس والرئيس العام للأكاديمية</p>
+            <p class="text-xs text-slate-400 mt-0.5">إدارة ومتابعة يومية لأداء المعلمين والطلاب</p>
+          </div>
+        </div>
+
+        <!-- Official Credentials & Guarantees -->
+        <div class="bg-quran-bg/80 rounded-2xl p-4 border border-quran-gold/25 space-y-3">
+          <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+            <i data-lucide="check-square" class="w-4 h-4 text-quran-gold shrink-0 mt-0.5"></i>
+            <span>إشراف علمي وإداري مباشر على خطط الحفظ ومواعيد الحلقات.</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+            <i data-lucide="check-square" class="w-4 h-4 text-quran-gold shrink-0 mt-0.5"></i>
+            <span>انتقاء دقيق لشيوخ ومعلمات الأزهر الشريف المعتمدين بالسند.</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+            <i data-lucide="check-square" class="w-4 h-4 text-quran-gold shrink-0 mt-0.5"></i>
+            <span>تقارير تقييم ومتابعة دورية مباشرة لأولياء الأمور.</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+            <i data-lucide="check-square" class="w-4 h-4 text-quran-gold shrink-0 mt-0.5"></i>
+            <span>تواصل مباشر مستمر للتنسيق واستلام الاستفسارات.</span>
+          </div>
+        </div>
+
+        <!-- Direct WhatsApp Action Button -->
+        <a href="https://wa.me/201515712708?text=السلام%20عليكم%20أستاذ%20أحمد%20أسامة،%20أستفسر%20عن%20التسجيل%20في%20الأكاديمية" 
+           target="_blank" 
+           class="w-full emerald-gradient-bg text-white font-black py-4 rounded-xl text-center shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
+          <i data-lucide="message-square" class="w-5 h-5"></i>
+          <span>محادثة مباشرة مع أ / أحمد أسامة</span>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Global Countries Ticker Bar -->
+  <section class="py-6 bg-quran-surface/90 border-y border-quran-gold/20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-4">
+      <div class="flex items-center gap-2 font-bold text-quran-gold shrink-0 text-xs sm:text-sm">
+        <i data-lucide="globe" class="w-5 h-5 text-emerald-400"></i>
+        <span>منصة عالمية يدرس بها طلاب من:</span>
+      </div>
+      <div class="flex items-center gap-2 overflow-x-auto w-full no-scrollbar py-2 text-xs font-bold text-slate-200">
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇪🇬 مصر</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇸🇦 السعودية</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇦🇪 الإمارات</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇰🇼 الكويت</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇶🇦 قطر</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇴🇲 عُمان</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇧🇭 البحرين</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇺🇸 أمريكا</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇬🇧 بريطانيا</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇨🇦 كندا</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇩🇪 ألمانيا</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇫🇷 فرنسا</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-slate-900 border border-quran-gold/25 whitespace-nowrap">🇹🇷 تركيا</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educational Tracks Section -->
+  <section id="tracks" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+      <span class="text-xs font-extrabold text-quran-gold tracking-widest uppercase bg-quran-gold/10 px-4 py-1.5 rounded-full border border-quran-gold/20">
+        المسارات التعليمية المعتمدة
+      </span>
+      <h2 class="font-amiri text-3xl sm:text-5xl font-bold text-white">
+        اختر المسار المناسب لك ولأسرتك
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base">
+        مناهج مدروسة ومتدرجة لكل الأعمار والمستويات تحت إشراف نخبة من كبار الشيوخ والمعلمات
+      </p>
+    </div>
+
+    <!-- Tracks Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Track 1 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 hover:border-quran-gold transition-all duration-300 hover:-translate-y-2 group flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-xl gold-gradient-bg p-0.5 mb-5 shadow-lg shadow-quran-gold/10 group-hover:scale-110 transition-transform">
+            <div class="w-full h-full bg-quran-surface rounded-xl flex items-center justify-center text-quran-gold">
+              <i data-lucide="baby" class="w-7 h-7"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">تأسيس الناشئة والأطفال</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            تعليم القراءة بالتشكيل والقاعدة النورانية وحفظ قصار السور بأسلوب شائق ومحبب للطفل.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2 mb-6 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> ابتداءً من سن 4 سنوات</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> معلمات مخصصات للأطفال</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> جوائز وشهادات تشجيعية</li>
+          </ul>
+        </div>
+        <a href="#apply" onclick="selectTrack('تأسيس الناشئة والأطفال')" class="w-full text-center py-2.5 rounded-xl border border-quran-gold/40 text-quran-gold text-xs font-bold hover:bg-quran-gold hover:text-quran-bg transition-all">
+          سجل في هذا المسار
+        </a>
+      </div>
+
+      <!-- Track 2 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 hover:border-quran-gold transition-all duration-300 hover:-translate-y-2 group flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-xl gold-gradient-bg p-0.5 mb-5 shadow-lg shadow-quran-gold/10 group-hover:scale-110 transition-transform">
+            <div class="w-full h-full bg-quran-surface rounded-xl flex items-center justify-center text-quran-gold">
+              <i data-lucide="book-marked" class="w-7 h-7"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">الحفظ الجديد والتثبيت</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            خطط مخصصة للحفظ والربط والمراجعة المستمرة لضمان ثبات الآيات وعدم التفلت.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2 mb-6 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> جدول يومي واسبوعي محدد</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> ربط وتثبيت المتشابهات</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> متابعة مباشرة (1 على 1)</li>
+          </ul>
+        </div>
+        <a href="#apply" onclick="selectTrack('الحفظ الجديد والتثبيت')" class="w-full text-center py-2.5 rounded-xl border border-quran-gold/40 text-quran-gold text-xs font-bold hover:bg-quran-gold hover:text-quran-bg transition-all">
+          سجل في هذا المسار
+        </a>
+      </div>
+
+      <!-- Track 3 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 hover:border-quran-gold transition-all duration-300 hover:-translate-y-2 group flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-xl gold-gradient-bg p-0.5 mb-5 shadow-lg shadow-quran-gold/10 group-hover:scale-110 transition-transform">
+            <div class="w-full h-full bg-quran-surface rounded-xl flex items-center justify-center text-quran-gold">
+              <i data-lucide="sparkles" class="w-7 h-7"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">تصحيح التلاوة والتجويد</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            إتقان مخارج الحروف وصفاتها وتطبيق أحكام التجويد النظري والتطبيقي بدقة.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2 mb-6 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> علاج الأخطاء الخفية والجليّة</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> دراسة التحفة والجزرية</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> مناسب للكبار والصغار</li>
+          </ul>
+        </div>
+        <a href="#apply" onclick="selectTrack('تصحيح التلاوة والتجويد')" class="w-full text-center py-2.5 rounded-xl border border-quran-gold/40 text-quran-gold text-xs font-bold hover:bg-quran-gold hover:text-quran-bg transition-all">
+          سجل في هذا المسار
+        </a>
+      </div>
+
+      <!-- Track 4 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 hover:border-quran-gold transition-all duration-300 hover:-translate-y-2 group flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-xl gold-gradient-bg p-0.5 mb-5 shadow-lg shadow-quran-gold/10 group-hover:scale-110 transition-transform">
+            <div class="w-full h-full bg-quran-surface rounded-xl flex items-center justify-center text-quran-gold">
+              <i data-lucide="scroll" class="w-7 h-7"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">مسار الإجازة بالسند</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            للحفاظ الراغبين في عرض القرآن كاملاً والإجازة بالسند المتصل إلى النبي ﷺ.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2 mb-6 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> ختمة كاملة غيباً متقنة</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> كبار المشايخ والمعلمات</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> شهادة سند معتمدة</li>
+          </ul>
+        </div>
+        <a href="#apply" onclick="selectTrack('مسار الإجازة بالسند المتصل')" class="w-full text-center py-2.5 rounded-xl border border-quran-gold/40 text-quran-gold text-xs font-bold hover:bg-quran-gold hover:text-quran-bg transition-all">
+          سجل في هذا المسار
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Audio Quran Recitations Section -->
+  <section id="audio" class="py-16 px-4 max-w-7xl mx-auto">
+    <div class="glass-panel-gold-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-10">
+        <span class="text-xs font-extrabold text-quran-gold tracking-widest uppercase bg-quran-gold/10 px-4 py-1.5 rounded-full border border-quran-gold/20">
+          نماذج التلاوات المباركة
+        </span>
+        <h2 class="font-amiri text-3xl sm:text-4xl font-bold text-white">
+          استمع إلى إتقان طلابنا ومُعلمينا
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-300">
+          تلاوات خاشعة بتطبيق أحكام التجويد ومخارج الحروف الصحيحة
+        </p>
+      </div>
+
+      <!-- Player Frame Card -->
+      <div class="max-w-xl mx-auto bg-quran-bg/95 rounded-2xl p-6 border border-quran-gold/30 shadow-2xl space-y-6">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center text-quran-bg shrink-0 shadow-lg">
+            <i data-lucide="music" class="w-7 h-7"></i>
+          </div>
+          <div class="flex-grow">
+            <h4 id="audioTitle" class="font-bold text-white text-base">سورة الفاتحة - تلاوة تجويدية تعليمية</h4>
+            <p id="audioSub" class="text-xs text-quran-gold mt-0.5">نموذج لتصحيح المخارج والأحكام</p>
+          </div>
+        </div>
+
+        <!-- HTML Native Audio Player -->
+        <audio id="quranAudioPlayer" class="w-full" controls>
+          <source id="audioSource" src="https://server8.mp3quran.net/afs/001.mp3" type="audio/mpeg">
+          متصفحك لا يدعم مشغل الصوت.
+        </audio>
+
+        <!-- Playlist Buttons -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+          <button onclick="playTrack('001', 'سورة الفاتحة - التجويد المتقن', 'نموذج لتصحيح المخارج')" class="p-3 rounded-xl bg-slate-900 border border-quran-gold/20 text-xs text-slate-200 hover:border-quran-gold hover:text-quran-gold transition-all text-right font-bold">
+            📖 سورة الفاتحة
+          </button>
+          <button onclick="playTrack('067', 'سورة الملك - ترتيل خاشع', 'نموذج طلاب مسار الحفظ')" class="p-3 rounded-xl bg-slate-900 border border-quran-gold/20 text-xs text-slate-200 hover:border-quran-gold hover:text-quran-gold transition-all text-right font-bold">
+            📖 سورة الملك
+          </button>
+          <button onclick="playTrack('112', 'قصار السور - مسار الناشئة', 'تأسيس الأطفال بالقاعدة')" class="p-3 rounded-xl bg-slate-900 border border-quran-gold/20 text-xs text-slate-200 hover:border-quran-gold hover:text-quran-gold transition-all text-right font-bold">
+            📖 سورة الإخلاص
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Memorization Planner Section -->
+  <section id="calculator" class="py-16 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
+      <span class="text-xs font-extrabold text-quran-gold tracking-widest uppercase bg-quran-gold/10 px-4 py-1.5 rounded-full border border-quran-gold/20">
+        حاسبة ختم القرآن الذكية
+      </span>
+      <h2 class="font-amiri text-3xl sm:text-4xl font-bold text-white">
+        خطط لرحلتك المباركة في حفظ كتاب الله
+      </h2>
+      <p class="text-slate-400 text-sm">
+        حدد مقادير حفظك اليومي لمعرفة الوقت التقديري لإتمام القرآن كاملاً
+      </p>
+    </div>
+
+    <div class="glass-panel-royal p-8 rounded-3xl max-w-4xl mx-auto border border-quran-gold/30 grid md:grid-cols-12 gap-8 items-center shadow-2xl">
+      
+      <!-- Interactive Range Left -->
+      <div class="md:col-span-7 space-y-6">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <label class="font-bold text-white text-sm sm:text-base">مقدار الحفظ اليومي:</label>
+            <span id="rangeValDisplay" class="font-black text-quran-gold text-base sm:text-lg bg-quran-bg px-3.5 py-1 rounded-xl border border-quran-gold/30">
+              صفحة واحدة يومياً
+            </span>
+          </div>
+          <input type="range" id="calcRange" min="0.5" max="5" step="0.5" value="1" class="w-full cursor-pointer" oninput="updateMemorizationCalc()">
+        </div>
+
+        <div class="bg-quran-bg/80 rounded-xl p-4 border border-slate-800 text-xs text-slate-300 space-y-2">
+          <p class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> بناءً على 5 أيام دراسة أسبوعية (100 صفحة شهرياً تقريباً).</p>
+          <p class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> يوما السبت والأحد مخصصان للمراجعة التثبيتية والشاملة.</p>
+        </div>
+      </div>
+
+      <!-- Result Card Right -->
+      <div class="md:col-span-5 glass-panel-gold-card rounded-2xl p-6 text-center space-y-3">
+        <span class="text-xs font-bold text-slate-300 uppercase">المدة التقديرية للختمة المباركة</span>
+        <div id="calcResultTime" class="font-amiri text-4xl sm:text-5xl font-bold text-quran-gold my-2">
+          28 شهراً
+        </div>
+        <p id="calcSubResult" class="text-xs text-emerald-300 font-semibold">
+          حوالي سنتين و 4 أشهر من الالتزام المنتظم
+        </p>
+        <a href="#apply" class="mt-4 inline-block btn-gold-glow gold-gradient-bg text-quran-bg font-black text-xs px-6 py-3 rounded-xl shadow-md w-full">
+          ابدأ خطتك الآن 🚀
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <section id="pricing" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+      <span class="text-xs font-extrabold text-quran-gold tracking-widest uppercase bg-quran-gold/10 px-4 py-1.5 rounded-full border border-quran-gold/20">
+        باقات الاشتراك والمناسبة للجميع
+      </span>
+      <h2 class="font-amiri text-3xl sm:text-5xl font-bold text-white">
+        خطط دراسية مرنة بأسعار تنافسية
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base">
+        دروس فردية خاصة (1 على 1) مع معلمين وأساتذة أزهريين معتمدين
+      </p>
+
+      <!-- Billing Cycle Switch Toggle -->
+      <div class="pt-6 flex justify-center items-center gap-4">
+        <button id="btnMonthToggle" onclick="setBillingCycle('monthly')" class="px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all gold-gradient-bg text-quran-bg shadow-md">
+          الاشتراك الشهري
+        </button>
+        <button id="btnYearToggle" onclick="setBillingCycle('yearly')" class="px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all bg-quran-surface text-slate-300 border border-quran-gold/30 hover:border-quran-gold">
+          الاشتراك السنوي (توفير 25%) 🏷️
+        </button>
+      </div>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-8 items-stretch">
+      
+      <!-- Basic Plan -->
+      <div class="glass-panel-royal p-8 rounded-3xl border border-quran-gold/20 flex flex-col justify-between hover:border-quran-gold/60 transition-all">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-1">الباقة الأساسية</h3>
+          <p class="text-xs text-slate-400 mb-6">مناسبة للمراجعة وتثبيت الحفظ الحالي</p>
+          
+          <div class="border-y border-slate-800 py-6 mb-6">
+            <span id="priceBasic" class="font-amiri text-4xl sm:text-5xl font-bold text-quran-gold">$35</span>
+            <span id="periodBasic" class="text-xs text-slate-400 block mt-1">شهرياً (4 حصص فردية / 30 دقيقة)</span>
+          </div>
+
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-3 mb-8">
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-quran-gold"></i> حلقة فردية خاصة (1 على 1)</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-quran-gold"></i> تصحيح التلاوة والتجويد</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-quran-gold"></i> تقرير شهري لمستوى الطالب</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-quran-gold"></i> معلم أو معلمة معتمدة</li>
+          </ul>
+        </div>
+
+        <a href="#apply" onclick="selectPlan('الباقة الأساسية')" class="w-full text-center py-3.5 rounded-xl border border-quran-gold text-quran-gold font-bold text-sm hover:bg-quran-gold hover:text-quran-bg transition-all">
+          اختيار هذه الباقة
+        </a>
+      </div>
+
+      <!-- Featured Pro Plan -->
+      <div class="glass-panel-gold-card p-8 rounded-3xl flex flex-col justify-between relative transform lg:-translate-y-2 shadow-2xl">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 gold-gradient-bg text-quran-bg font-black text-xs px-4 py-1 rounded-full shadow-lg whitespace-nowrap">
+          ⭐ الأكثر طلباً وتوصية
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-1">باقة المتميزين المكثفة</h3>
+          <p class="text-xs text-quran-goldLight mb-6">الخيار المثالي للحفظ السريع والتثبيت</p>
+          
+          <div class="border-y border-quran-gold/20 py-6 mb-6">
+            <span id="pricePro" class="font-amiri text-4xl sm:text-5xl font-bold text-quran-gold">$65</span>
+            <span id="periodPro" class="text-xs text-slate-300 block mt-1">شهرياً (8 حصص فردية / 45 دقيقة)</span>
+          </div>
+
+          <ul class="text-xs sm:text-sm text-slate-200 space-y-3 mb-8">
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> حلقات مكثفة ومباشرة</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> جدول حفظ ومراجعة مخصص</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> شهادات تقدير وتفوق دورية</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> أولوية واختيار مرن للمواعيد</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> دعم تواصل واتساب مستمر</li>
+          </ul>
+        </div>
+
+        <a href="#apply" onclick="selectPlan('باقة المتميزين المكثفة')" class="w-full text-center py-3.5 rounded-xl btn-gold-glow gold-gradient-bg text-quran-bg font-black text-sm shadow-lg hover:scale-105 transition-all">
+          اشترك الآن في الباقة 🚀
+        </a>
+      </div>
+
+      <!-- Master Ijazah Plan -->
+      <div class="glass-panel-royal p-8 rounded-3xl border border-quran-gold/20 flex flex-col justify-between hover:border-quran-gold/60 transition-all">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-1">باقة الإجازة والسند</h3>
+          <p class="text-xs text-slate-400 mb-6">للحفاظ الراغبين في ختم المصحف بالسند</p>
+          
+          <div class="border-y border-slate-800 py-6 mb-6">
+            <span id="priceMaster" class="font-amiri text-4xl sm:text-5xl font-bold text-quran-gold">$95</span>
+            <span id="periodMaster" class="text-xs text-slate-400 block mt-1">شهرياً (12 حصة فردية / 60 دقيقة)</span>
+          </div>
+
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-3 mb-8">
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-quran-gold"></i> ختمة كاملة غيباً بالسند المتصل</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-quran-gold"></i> دراسة متون ومبادئ علم التجويد</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-quran-gold"></i> إشراف أزهري رفيع المستوى</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-quran-gold"></i> شهادة إجازة مسندة</li>
+          </ul>
+        </div>
+
+        <a href="#apply" onclick="selectPlan('باقة الإجازة والسند')" class="w-full text-center py-3.5 rounded-xl border border-quran-gold text-quran-gold font-bold text-sm hover:bg-quran-gold hover:text-quran-bg transition-all">
+          طلب مسار الإجازة
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Global & Local Payment Gateways Banner -->
+    <div class="mt-12 glass-panel-royal p-6 sm:p-8 rounded-3xl text-center space-y-4 border border-quran-gold/30">
+      <h4 class="text-quran-gold font-extrabold text-base sm:text-lg flex items-center justify-center gap-2">
+        <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+        <span>طرق الدفع المحلية والعالمية المتاحة بسهولة وأمان</span>
+      </h4>
+      <div class="flex flex-wrap justify-center gap-2.5 text-xs font-bold text-slate-200 pt-2">
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">⚡ InstaPay (إنستا باي)</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">📱 Vodafone Cash (فودافون كاش)</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">💳 Visa / MasterCard</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">🌐 PayPal (بايبال)</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">🍎 Apple Pay</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">🤖 Google Pay</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">🇸🇦 STC Pay</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">🏦 تحويل بنكي مباشر</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">💸 Western Union</span>
+        <span class="px-4 py-2.5 rounded-xl bg-quran-bg border border-slate-800">🛍️ Fawry (فوري)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wall of Reviews (Huge Global Testimonials) -->
+  <section id="wallOfLove" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+      <span class="text-xs font-extrabold text-quran-gold tracking-widest uppercase bg-quran-gold/10 px-4 py-1.5 rounded-full border border-quran-gold/20">
+        حائط التقييمات الشامل
+      </span>
+      <h2 class="font-amiri text-3xl sm:text-5xl font-bold text-white">
+        ماذا يقول طلابنا وأولياء الأمور حول العالم؟
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base">
+        تجارب حقيقية ونماذج نجاح نعتز بخدمتهم ورعايتهم العلمية
+      </p>
+    </div>
+
+    <!-- Multi-Country Testimonials Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Testimonial 1 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex text-quran-gold text-xs">★★★★★</div>
+          <span class="text-xs text-slate-400 font-bold">🇸🇦 الرياض، السعودية</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+          "بفضل الله ثم المتابعة الشخصية الدقيقة من الأستاذ أحمد أسامة والمعلمة، أتمت ابنتي حفظ 10 أجزاء بتجويد متقن جداً."
+        </p>
+        <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+          <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-quran-bg text-sm">
+            أم
+          </div>
+          <div>
+            <h5 class="text-xs font-bold text-white">أم عبد الرحمن</h5>
+            <span class="text-[10px] text-quran-gold">ولي أمر طالبة</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex text-quran-gold text-xs">★★★★★</div>
+          <span class="text-xs text-slate-400 font-bold">🇰🇼 الكويت</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+          "المرونة في الأوقات كانت الخيار الأمثل لي كطبيب. الشيخ أزهري مجاز متقن لأحكام التجويد بدقة، بدأت رحلة ختم القرآن غيباً."
+        </p>
+        <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+          <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-quran-bg text-sm">
+            د
+          </div>
+          <div>
+            <h5 class="text-xs font-bold text-white">د. خالد العتيبي</h5>
+            <span class="text-[10px] text-quran-gold">طالب مسار الحفظ والتثبيت</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex text-quran-gold text-xs">★★★★★</div>
+          <span class="text-xs text-slate-400 font-bold">🇺🇸 كاليفورنيا، أمريكا</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+          "أبنائي يدرسون من أمريكا، وكان من الصعب إيجاد معلم يتقن القاعدة النورانية بهذا الأسلوب المشجع، الآن يقرؤون بطلاقة."
+        </p>
+        <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+          <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-quran-bg text-sm">
+            م
+          </div>
+          <div>
+            <h5 class="text-xs font-bold text-white">م. طارق علي</h5>
+            <span class="text-[10px] text-quran-gold">ولي أمر أطفال</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex text-quran-gold text-xs">★★★★★</div>
+          <span class="text-xs text-slate-400 font-bold">🇪🇬 القاهرة، مصر</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+          "التنسيق المباشر مع أ/ أحمد أسامة يمنحنا راحة بال تامة. المعلمون أزاهرة متمكنون ويصبرون على الأطفال بأسلوب تربوي ممتاز."
+        </p>
+        <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+          <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-quran-bg text-sm">
+            أ
+          </div>
+          <div>
+            <h5 class="text-xs font-bold text-white">أستاذ أحمد متولي</h5>
+            <span class="text-[10px] text-quran-gold">ولي أمر طالبين</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 5 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex text-quran-gold text-xs">★★★★★</div>
+          <span class="text-xs text-slate-400 font-bold">🇬🇧 لندن، بريطانيا</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+          "درس تصحيح التلاوة والتجويد غير طريقة قراءتي تماماً. الإتقان والمتابعة الدورية جعلتني أختم 5 أجزاء بتجويد عالٍ."
+        </p>
+        <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+          <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-quran-bg text-sm">
+            س
+          </div>
+          <div>
+            <h5 class="text-xs font-bold text-white">سارة الحامد</h5>
+            <span class="text-[10px] text-quran-gold">طالبة تصحيح تلاوة</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 6 -->
+      <div class="glass-panel-royal p-6 rounded-2xl border border-quran-gold/20 space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex text-quran-gold text-xs">★★★★★</div>
+          <span class="text-xs text-slate-400 font-bold">🇦🇪 دبي، الإمارات</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+          "باقة الإجازة والسند ممتازة جداً. الشيخ المتابع معي من كبار قراء الأزهر الشريف، والمتابعة مستمرة ودقيقة للغاية."
+        </p>
+        <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+          <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-quran-bg text-sm">
+            ع
+          </div>
+          <div>
+            <h5 class="text-xs font-bold text-white">عبد الله المهيري</h5>
+            <span class="text-[10px] text-quran-gold">طالب مسار الإجازة</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section id="faq" class="py-16 px-4 max-w-4xl mx-auto">
+    <div class="text-center space-y-3 mb-12">
+      <span class="text-xs font-extrabold text-quran-gold tracking-widest uppercase bg-quran-gold/10 px-4 py-1.5 rounded-full border border-quran-gold/20">
+        الأسئلة الشائعة
+      </span>
+      <h2 class="font-amiri text-3xl sm:text-4xl font-bold text-white">
+        كل ما تود معرفته عن نظام الدراسة
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      
+      <!-- FAQ 1 -->
+      <div class="glass-panel-royal rounded-2xl p-5 border border-quran-gold/20 cursor-pointer" onclick="toggleFaq('faq1')">
+        <div class="flex justify-between items-center font-bold text-sm sm:text-base text-white">
+          <span>كيف يتم تحديد مواعيد الحلقات الدراسية؟</span>
+          <i id="faq1-icon" data-lucide="chevron-down" class="w-5 h-5 text-quran-gold transition-transform"></i>
+        </div>
+        <p id="faq1" class="hidden text-xs sm:text-sm text-slate-300 mt-3 pt-3 border-t border-slate-800 leading-relaxed">
+          يتم تحديد الأوقات بالتنسيق المباشر مع الأستاذ أحمد أسامة بما يتناسب تماماً مع جدول الطالب وتوقيته المحلي في أي دولة.
+        </p>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="glass-panel-royal rounded-2xl p-5 border border-quran-gold/20 cursor-pointer" onclick="toggleFaq('faq2')">
+        <div class="flex justify-between items-center font-bold text-sm sm:text-base text-white">
+          <span>هل تتوفر معلمات مخصصات للنساء والأطفال؟</span>
+          <i id="faq2-icon" data-lucide="chevron-down" class="w-5 h-5 text-quran-gold transition-transform"></i>
+        </div>
+        <p id="faq2" class="hidden text-xs sm:text-sm text-slate-300 mt-3 pt-3 border-t border-slate-800 leading-relaxed">
+          نعم، لدينا نخبة من المعلمات الأزهريات المعتمدات والمجازات لتعليم النساء والأطفال في ألمسارات المختلفة.
+        </p>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="glass-panel-royal rounded-2xl p-5 border border-quran-gold/20 cursor-pointer" onclick="toggleFaq('faq3')">
+        <div class="flex justify-between items-center font-bold text-sm sm:text-base text-white">
+          <span>هل توجد حصة تجريبية قبل الاشتراك المالي؟</span>
+          <i id="faq3-icon" data-lucide="chevron-down" class="w-5 h-5 text-quran-gold transition-transform"></i>
+        </div>
+        <p id="faq3" class="hidden text-xs sm:text-sm text-slate-300 mt-3 pt-3 border-t border-slate-800 leading-relaxed">
+          نعم، توفر الأكاديمية جِلسة تجريبية لتقييم المستوى والتأكد من ملاءمة المنهج والمعلم للطالب قبل تأكيد الاشتراك.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Application & Registration Section -->
+  <section id="apply" class="py-20 px-4 max-w-4xl mx-auto">
+    <div class="glass-panel-gold-card rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl islamic-border-frame">
+      
+      <div class="text-center space-y-3 mb-8">
+        <span class="text-xs font-extrabold text-quran-gold tracking-widest uppercase bg-quran-gold/10 px-4 py-1.5 rounded-full border border-quran-gold/20">
+          التسجيل المباشر
+        </span>
+        <h2 class="font-amiri text-3xl sm:text-4xl font-bold text-white">
+          نموذج تقديم الطلب المباشر
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-300">
+          تعبئة البيانات لتحويل الطلب فوراً إلى الأستاذ أحمد أسامة عبر الواتساب
+        </p>
+      </div>
+
+      <!-- Role Switcher Tabs (Student vs Teacher) -->
+      <div class="flex bg-quran-bg p-1.5 rounded-2xl border border-quran-gold/30 mb-8 max-w-md mx-auto">
+        <button id="btnRoleStudent" type="button" onclick="setRole('student')" class="flex-1 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all gold-gradient-bg text-quran-bg shadow-md">
+          طلب الالتحاق كطالب 📖
+        </button>
+        <button id="btnRoleTeacher" type="button" onclick="setRole('teacher')" class="flex-1 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all text-slate-400 hover:text-white">
+          الانضمام كمعلم 🕌
+        </button>
+      </div>
+
+      <!-- Main Registration Form -->
+      <form id="academyRegistrationForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          
+          <div>
+            <label class="block text-xs font-bold text-quran-gold mb-2">الاسم الكامل *</label>
+            <input type="text" id="applicantName" required placeholder="أدخل اسمك الثلاثي" class="w-full bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold transition-colors">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-quran-gold mb-2">رقم الواتساب مع كود الدولة *</label>
+            <input type="tel" id="applicantPhone" required placeholder="مثال: +966xxxxxxxxx" class="w-full bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold transition-colors">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-quran-gold mb-2">الدولة المقيم بها *</label>
+            <input type="text" id="applicantCountry" required placeholder="مصر، السعودية، الكويت، أمريكا..." class="w-full bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold transition-colors">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-quran-gold mb-2">العمر والجنس *</label>
+            <div class="flex gap-2">
+              <input type="number" id="applicantAge" min="4" max="90" required placeholder="العمر" class="w-1/2 bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold">
+              <select id="applicantGender" required class="w-1/2 bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold">
+                <option value="ذكر">ذكر</option>
+                <option value="أنثى">أنثى</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Student Dynamic Fields -->
+          <div id="studentTrackWrapper" class="md:col-span-2">
+            <label class="block text-xs font-bold text-quran-gold mb-2">المسار المطلوب والمستوى الحالي *</label>
+            <div class="grid md:grid-cols-2 gap-4">
+              <select id="selectedTrack" class="bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold">
+                <option value="تأسيس الناشئة والأطفال">تأسيس الناشئة والأطفال</option>
+                <option value="الحفظ الجديد والتثبيت">الحفظ الجديد والتثبيت</option>
+                <option value="تصحيح التلاوة والتجويد">تصحيح التلاوة والتجويد</option>
+                <option value="مسار الإجازة بالسند المتصل">مسار الإجازة بالسند المتصل</option>
+              </select>
+
+              <select id="currentLevel" class="bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold">
+                <option value="مبتدئ (بدون حفظ سابق)">مبتدئ (بدون حفظ سابق)</option>
+                <option value="1 إلى 5 أجزاء">1 - 5 أجزاء</option>
+                <option value="5 إلى 15 جزء">5 - 15 جزء</option>
+                <option value="أكثر من 15 جزء">أكثر من 15 جزء</option>
+                <option value="خاتم للمصحف كاملاً">خاتم للمصحف كاملاً</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Teacher Dynamic Fields -->
+          <div id="teacherQualWrapper" class="hidden md:col-span-2 space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-quran-gold mb-2">المؤهل الأزهري والإجازات القرآنية *</label>
+              <input type="text" id="teacherQual" placeholder="مثال: ليسانس شريعة أزهر / حاصل على إجازة حفص عن عاصم" class="w-full bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-quran-gold mb-2">سنوات الخبرة في التدريس أونلاين *</label>
+              <input type="number" id="teacherExp" min="0" placeholder="عدد السنوات" class="w-full bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold">
+            </div>
+          </div>
+
+          <!-- Preferred Time -->
+          <div class="md:col-span-2">
+            <label class="block text-xs font-bold text-quran-gold mb-2">الوقت المفضل للحلقات *</label>
+            <select id="preferredTime" class="w-full bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold">
+              <option value="الفترة الصباحية">الفترة الصباحية</option>
+              <option value="بعد الظهيرة">بعد الظهيرة</option>
+              <option value="الفترة المسائية">الفترة المسائية</option>
+            </select>
+          </div>
+
+          <!-- Notes Field -->
+          <div class="md:col-span-2">
+            <label class="block text-xs font-bold text-quran-gold mb-2">ملاحظات أو استفسارات إضافية</label>
+            <textarea id="applicantNotes" rows="3" placeholder="اكتب أي تفاصيل ترغب في مشاركتها مع أ / أحمد أسامة..." class="w-full bg-quran-bg border border-quran-gold/30 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-quran-gold resize-none"></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="w-full btn-gold-glow gold-gradient-bg text-quran-bg font-black py-4 rounded-xl shadow-xl text-base hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          <span>إرسال الطلب مباشرة إلى أ / أحمد أسامة</span>
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-quran-surface border-t border-quran-gold/20 py-12 text-center text-xs text-slate-400">
+  <div class="max-w-7xl mx-auto px-4 space-y-4">
+    <div class="flex items-center justify-center gap-2">
+      <div class="w-8 h-8 rounded-full gold-gradient-bg p-0.5">
+        <div class="w-full h-full bg-quran-surface rounded-full flex items-center justify-center font-amiri text-lg font-bold text-quran-gold">
+          ن
+        </div>
+      </div>
+      <span class="font-bold text-white text-base">أكاديمية نور القرآن العالمية</span>
+    </div>
+
+    <p class="text-slate-300">
+      تحت إشراف وإدارة الأستاذ / أحمد أسامة — 2026 جميع الحقوق محفوظة
+    </p>
+
+    <div class="flex flex-wrap justify-center items-center gap-6 text-quran-gold font-semibold pt-2">
+      <span>📱 واتساب: 01515712708</span>
+      <span>🌐 الخدمة متوفرة لجميع دول العالم</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Notification Toast -->
+<div id="toastAlert" class="fixed bottom-6 right-6 z-50 glass-panel-royal border border-emerald-500 text-white px-6 py-4 rounded-2xl shadow-2xl transform translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-3">
+  <i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-400"></i>
+  <span id="toastMsg" class="text-xs sm:text-sm font-bold">جاري توجيهك إلى الواتساب...</span>
+</div>
+
+<script>
+  // Initialize Lucide Icons
+  lucide.createIcons();
+
+  const OWNER_WHATSAPP = "201515712708";
+  let currentRole = 'student';
+  let currentBilling = 'monthly';
+
+  // Role Toggle Logic
+  function setRole(role) {
+    currentRole = role;
+    const btnStudent = document.getElementById('btnRoleStudent');
+    const btnTeacher = document.getElementById('btnRoleTeacher');
+    const studentWrapper = document.getElementById('studentTrackWrapper');
+    const teacherWrapper = document.getElementById('teacherQualWrapper');
+
+    if (role === 'student') {
+      btnStudent.className = 'flex-1 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all gold-gradient-bg text-quran-bg shadow-md';
+      btnTeacher.className = 'flex-1 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all text-slate-400 hover:text-white';
+      studentWrapper.classList.remove('hidden');
+      teacherWrapper.classList.add('hidden');
+    } else {
+      btnTeacher.className = 'flex-1 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all gold-gradient-bg text-quran-bg shadow-md';
+      btnStudent.className = 'flex-1 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all text-slate-400 hover:text-white';
+      studentWrapper.classList.add('hidden');
+      teacherWrapper.classList.remove('hidden');
+    }
+  }
+
+  function selectTrack(trackName) {
+    setRole('student');
+    document.getElementById('selectedTrack').value = trackName;
+    document.location.href = '#apply';
+  }
+
+  function selectPlan(planName) {
+    setRole('student');
+    document.getElementById('applicantNotes').value = `أرغب بالاشتراك في (${planName})`;
+    document.location.href = '#apply';
+  }
+
+  // Billing Cycle Switch
+  function setBillingCycle(cycle) {
+    currentBilling = cycle;
+    const btnMonth = document.getElementById('btnMonthToggle');
+    const btnYear = document.getElementById('btnYearToggle');
+
+    if (cycle === 'yearly') {
+      btnYear.className = 'px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all gold-gradient-bg text-quran-bg shadow-md';
+      btnMonth.className = 'px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all bg-quran-surface text-slate-300 border border-quran-gold/30 hover:border-quran-gold';
+
+      document.getElementById('priceBasic').innerText = "$315";
+      document.getElementById('periodBasic').innerText = "سنوياً (توفير 25%)";
+
+      document.getElementById('pricePro').innerText = "$585";
+      document.getElementById('periodPro').innerText = "سنوياً (توفير 25%)";
+
+      document.getElementById('priceMaster').innerText = "$855";
+      document.getElementById('periodMaster').innerText = "سنوياً (توفير 25%)";
+    } else {
+      btnMonth.className = 'px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all gold-gradient-bg text-quran-bg shadow-md';
+      btnYear.className = 'px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all bg-quran-surface text-slate-300 border border-quran-gold/30 hover:border-quran-gold';
+
+      document.getElementById('priceBasic').innerText = "$35";
+      document.getElementById('periodBasic').innerText = "شهرياً (4 حصص فردية / 30 دقيقة)";
+
+      document.getElementById('pricePro').innerText = "$65";
+      document.getElementById('periodPro').innerText = "شهرياً (8 حصص فردية / 45 دقيقة)";
+
+      document.getElementById('priceMaster').innerText = "$95";
+      document.getElementById('periodMaster').innerText = "شهرياً (12 حصة فردية / 60 دقيقة)";
+    }
+  }
+
+  // Memorization Calculator Logic
+  function updateMemorizationCalc() {
+    const val = parseFloat(document.getElementById('calcRange').value);
+    document.getElementById('rangeValDisplay').innerText = `${val} صفحة يومياً`;
+
+    const pagesPerMonth = val * 22;
+    const totalMonths = Math.ceil(604 / pagesPerMonth);
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    let text = `${totalMonths} شهراً`;
+    if (years > 0) {
+      text = `${years} سنة و ${months} أشهر`;
+    }
+
+    document.getElementById('calcResultTime').innerText = text;
+  }
+
+  // Audio Player Track Changer
+  function playTrack(surahNum, title, sub) {
+    const player = document.getElementById('quranAudioPlayer');
+    const source = document.getElementById('audioSource');
+    document.getElementById('audioTitle').innerText = title;
+    document.getElementById('audioSub').innerText = sub;
+
+    source.src = `https://server8.mp3quran.net/afs/${surahNum}.mp3`;
+    player.load();
+    player.play();
+  }
+
+  // FAQ Accordion Toggle
+  function toggleFaq(id) {
+    const content = document.getElementById(id);
+    const icon = document.getElementById(`${id}-icon`);
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      content.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  // Form Submit Handler to Direct WhatsApp
+  function handleFormSubmit(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('applicantName').value.trim();
+    const phone = document.getElementById('applicantPhone').value.trim();
+    const country = document.getElementById('applicantCountry').value.trim();
+    const age = document.getElementById('applicantAge').value;
+    const gender = document.getElementById('applicantGender').value;
+    const time = document.getElementById('preferredTime').value;
+    const notes = document.getElementById('applicantNotes').value.trim();
+
+    let msg = `السلام عليكم ورحمة الله وبركاته%0A`;
+    msg += `أستاذ *أحمد أسامة*، أرغب في الانضمام إلى *أكاديمية نور القرآن العالمية*%0A%0A`;
+    msg += `📌 *تفاصيل الطلب:*%0A`;
+    msg += `• *نوع الطلب:* ${currentRole === 'student' ? 'طالب جديد 📖' : 'معلم 🕌'}%0A`;
+    msg += `• *الاسم:* ${name}%0A`;
+    msg += `• *رقم الواتساب:* ${phone}%0A`;
+    msg += `• *الدولة:* ${country}%0A`;
+    msg += `• *العمر والجنس:* ${age} سنة (${gender})%0A`;
+
+    if (currentRole === 'student') {
+      const track = document.getElementById('selectedTrack').value;
+      const level = document.getElementById('currentLevel').value;
+      msg += `• *المسار المطلوب:* ${track}%0A`;
+      msg += `• *المستوى الحالي:* ${level}%0A`;
+    } else {
+      const qual = document.getElementById('teacherQual').value;
+      const exp = document.getElementById('teacherExp').value;
+      msg += `• *المؤهلات:* ${qual}%0A`;
+      msg += `• *الخبرة:* ${exp} سنوات%0A`;
+    }
+
+    msg += `• *الوقت المفضل:* ${time}%0A`;
+    if (notes) msg += `• *ملاحظات:* ${notes}%0A`;
+
+    showToast("جاري توجيه طلبك فوراً إلى الأستاذ أحمد أسامة عبر الواتساب...");
+
+    setTimeout(() => {
+      window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${msg}`, '_blank');
+    }, 1200);
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastAlert');
+    document.getElementById('toastMsg').innerText = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 4000);
+  }
+</script>
+</body>
+</html>
